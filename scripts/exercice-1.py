@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
+import pandas as pd
 
 def iterate(Z):
     # Count neighbours
@@ -15,12 +16,12 @@ def iterate(Z):
     Z[1:-1,1:-1][birth | survive] = 1
     return Z
 
-Z  = np.zeros((32,32), dtype=int)
+Z  = np.ones((32,32), dtype=int)
 Z[1:4,1:4] = [[0,0,1],
               [1,0,1],
               [0,1,1]]
 
-for i in range(4*20):
+for i in range(3*15):
     iterate(Z)
 
 size = 4*np.array(Z.shape)
